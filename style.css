@@ -1,0 +1,63 @@
+.one {
+    color: black;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    
+      margin:0px;
+    
+    text-align:center;
+}
+
+body {
+    background-color: rgb(133, 160, 161);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 100vh;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.two {
+     margin-top: auto; 
+    margin-bottom: auto;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: rotate 30s linear infinite;
+}
+
+@keyframes rotate {
+    0% { transform: perspective(1000px) rotateY(0deg); }
+    100% { transform: perspective(1000px) rotateY(360deg); }
+}
+
+.two span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * 60deg)) translateZ(350px);
+}
+
+.two span img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.two span img:hover {
+    transform: scale(1.2);
+}
